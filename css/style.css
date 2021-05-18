@@ -705,6 +705,11 @@ img {
     fill: currentColor;
 }
 
+.close-btn:hover .icon,
+.close-btn:focus .icon {
+    fill: var(--accent-color);
+}
+
 .modal-text {
     font-family: var(--font-family-Rob);
     font-weight: var(--font-weight-bold);
@@ -717,7 +722,6 @@ img {
 .modal-lable {
     position: relative;
     margin-bottom: 10px;
-    display: block;
 }
 
 .modal-lable,
@@ -737,6 +741,7 @@ img {
 }
 
 .modal-input-text {
+    display: block;
     padding-top: 11px;
     padding-right: 12px;
     padding-bottom: 11px;
@@ -744,6 +749,16 @@ img {
     font-size: 14px;
     margin-top: 4px;
     margin-bottom: 10px;
+}
+
+.modal-input-text:hover,
+.modal-input-text:focus {
+    border: 1px solid #2196F3;
+}
+
+.modal-input-text:hover .modal-input-icon,
+.modal-input-text:focus .modal-input-icon {
+    fill: 1px solid #2196F3;
 }
 
 .modal-input-text,
@@ -768,8 +783,12 @@ img {
     resize: none;
 }
 
+.modal-comments:hover,
+.modal-comments:focus {
+    border: 1px solid #2196F3;
+}
+
 .modal-input-icon {
-    position: absolute;
     bottom: 11px;
     left: 12px;
     width: 18px;
