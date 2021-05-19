@@ -603,8 +603,8 @@ img {
 }
 
 .footer-subscription-title {
-    font-family: var(--font-family-Rob);
-    font-weight: var(--font-weight-bold);
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
     margin-top: 0;
     margin-bottom: 20px;
     color: var(--white-color);
@@ -681,7 +681,6 @@ img {
 .modal {
     position: relative;
     max-width: 600px;
-    max-height: 600px;
     padding: 40px;
     background-color: var(--white-color);
 }
@@ -717,15 +716,38 @@ img {
     line-height: 1.17;
 }
 
-.modal-form {}
-
-.modal-lable {
+.modal-label {
     position: relative;
+    display: block;
     margin-bottom: 10px;
 }
 
-.modal-lable,
-.modal-comments {
+.modal-input-text,
+.comment {
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+}
+
+.modal-input-text {
+    padding-top: 11px;
+    padding-right: 12px;
+    padding-bottom: 11px;
+    padding-left: 42px;
+    font-size: 14px;
+}
+
+.modal-input-text:focus,
+.comment:focus {
+    border-color: var(--accent-color);
+}
+
+.modal-input-text:focus~.modal-input-icon {
+    fill: var(--accent-color);
+}
+
+.modal-label>.comment {
     padding: 16px 12px;
     height: 120px;
     resize: none;
@@ -734,61 +756,20 @@ img {
     letter-spacing: 0.01em;
 }
 
-.modal-label-span {
-    font-family: var(--font-family-Rob);
-    font-weight: var(--font-weight-regular);
+.modal-label>.comment::placeholder {
     color: var(--primary-text-color);
+    font-size: 12px;
+    line-height: 1.17px;
+    letter-spacing: 0.01em;
 }
 
-.modal-input-text {
-    display: block;
-    padding-top: 11px;
-    padding-right: 12px;
-    padding-bottom: 11px;
-    padding-left: 42px;
-    font-size: 14px;
-    margin-top: 4px;
-    margin-bottom: 10px;
-}
-
-.modal-input-text:hover,
-.modal-input-text:focus {
-    border: 1px solid #2196F3;
-}
-
-.modal-input-text:hover .modal-input-icon,
-.modal-input-text:focus .modal-input-icon {
-    fill: 1px solid #2196F3;
-}
-
-.modal-input-text,
-.modal-comments {
-    display: block;
-    width: 100%;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-}
-
-.modal-input-text:focus {
-    border-color: var(--accent-color);
-}
-
-.modal-input-comments {
-    display: block;
-    padding-left: 40px;
-    padding-right: 40px;
-    width: 100%;
-    margin-bottom: 25px;
-    height: 120px;
-    resize: none;
-}
-
-.modal-comments:hover,
-.modal-comments:focus {
-    border: 1px solid #2196F3;
+.modal .label {
+    font-size: 12px;
+    line-height: 1.17;
 }
 
 .modal-input-icon {
+    position: absolute;
     bottom: 11px;
     left: 12px;
     width: 18px;
@@ -798,12 +779,26 @@ img {
 
 .modal-label-accept {
     display: flex;
-    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    text-align: center;
 }
 
-.modal-input-checkbox {
+.modal-label-accept .modal-input-checkbox {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+.custom-checkbox {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -816,7 +811,19 @@ img {
     transition: color var(--transition-param), background-color var(--transition-param), border-color var(--transition-param);
 }
 
-.accept-title {}
+.modal-input-checkbox:checked~.custom-checkbox {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    border-color: transparent;
+}
+
+.accept-checkbox-icon {
+    fill: currentColor;
+}
+
+.accept-title>a {
+    color: var(--accent-color);
+}
 
 .modal-btn {
     display: flex;
