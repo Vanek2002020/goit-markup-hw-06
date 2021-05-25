@@ -706,6 +706,7 @@ img {
 
 .close-btn:hover .icon,
 .close-btn:focus .icon {
+    transition: var(--transition-param);
     fill: var(--accent-color);
 }
 
@@ -724,6 +725,7 @@ img {
 
 .modal-input-text,
 .comment {
+    outline: none;
     display: block;
     width: 100%;
     border: 1px solid rgba(33, 33, 33, 0.2);
@@ -739,11 +741,16 @@ img {
 }
 
 .modal-input-text:focus,
-.comment:focus {
+.modal-input-text:hover,
+.comment:focus,
+.comment:hover {
+    transition: border-color var(--transition-param);
     border-color: var(--accent-color);
 }
 
-.modal-input-text:focus~.modal-input-icon {
+.modal-input-text:focus~.modal-input-icon,
+.modal-input-text:hover~.modal-input-icon {
+    transition: fill var(--transition-param);
     fill: var(--accent-color);
 }
 
@@ -770,10 +777,8 @@ img {
 
 .modal-input-icon {
     position: absolute;
-    bottom: 11px;
-    left: 12px;
-    width: 18px;
-    height: 18px;
+    bottom: 14px;
+    left: 15px;
     fill: var(--title-text-color);
 }
 
@@ -815,6 +820,12 @@ img {
     background-color: var(--accent-color);
     color: var(--white-color);
     border-color: transparent;
+}
+
+.modal-input-checkbox:checked~.custom-checkbox,
+.modal-input-checkbox:focus~.custom-checkbox {
+    transition: var(--transition-param);
+    border-color: var(--accent-color);
 }
 
 .accept-checkbox-icon {
